@@ -1,0 +1,347 @@
+#include  <iostream>
+#include <iomanip>
+#include <cstdlib>
+#include <string.h>
+#include <stdlib.h>
+
+using namespace std;
+
+
+int main()
+{
+	
+	///put variables here first.
+	
+	char pass[50], UNICODE;
+	float NTUAD, NTLAD, NTGAD, NTVAD, MONEY, SOKLI, MONEYU, MONEYL, MONEYG, MONEYV;
+	int CLIENTS, LOOP, NT, NUMLP;
+	
+	
+	
+			cout<< endl;
+			cout<< endl;
+	
+	
+	
+		
+			jump1:
+			cout<< setw(21) << " " << left << setw (13) << right << "*****TICKETING SYSTEM*****\n\n\n";
+
+	
+
+	cout<< setw(30) << right << "PASSWORD:";
+	cin>>pass;
+	cout<<endl;
+
+
+
+	if (strcmp(pass, "hello")==0)
+		{
+			cout<<endl;
+		}
+	
+
+
+	else
+		{
+			system("pause");
+			system("CLS");
+			goto jump1;
+		}
+	
+	
+
+
+		cout<< endl << setw (21) << right << " " << setw (26) << right << "ENTER NO. OF CLIENT(s) TO SERVE:";
+		cin>>CLIENTS;	
+		cout<<endl;
+		
+	
+for(int NUMLP=1; NUMLP<=CLIENTS; NUMLP++)
+{	
+
+		cout<<endl;
+		cout<< setw (21) << right << " " << setw (18) << right << "ENTER NO. OF TICKETS:";
+		cin>>NT;
+		cout<<endl;
+		
+	
+		
+		
+			cout<< setw (21) << right<< " " << setw (15)<< "U = UPPER BOX = 1000.00" <<  right;
+			cout<<endl;
+			
+			cout<< setw (21) << right<< " " << setw (15)<< "L = LOWER BOX = 1500.00" <<  right;
+			cout<<endl;
+			
+			cout<< setw (21) << right<< " " << setw (15)<< "G = GEN AD = 500.00" <<  right;
+			cout<<endl;
+			
+			cout<< setw (21) << right<< " " << setw (15)<< "V = VIP = 2000.00" <<  right;
+			cout<<endl;
+		
+		jump2:	
+		cout<<endl;
+		cout<< endl << setw (21) << right<< " " << setw (15)<< "ENTER TICKET CODE: ";
+		cin>>UNICODE;
+		
+		
+
+
+	///	for (int NUMLP=CLIENTS; NUMLP>=1; NUMLP--)
+		
+		if ( UNICODE == 'U' || UNICODE == 'u'|| UNICODE == 'L' || UNICODE == 'l' || UNICODE == 'G' || UNICODE == 'g' || UNICODE == 'V' || UNICODE == 'v')
+				{
+					cout<<endl;
+				}
+				
+		else
+			{
+				cout<<endl;
+				cout<<endl;
+				cout<<setw (21) << right << " " << setw (3) << "you have entered a wrong code"<< right;
+				goto jump2;
+			}	
+		
+
+	
+
+	if (UNICODE == 'U'||UNICODE == 'u')
+	{
+			if (NT>=50)
+
+				{
+					cout<<setw (21) << right << " " << setw (3) << "YOU HAVE 2 FREE TICKETS";
+					cout<<endl;	
+				}
+		
+	
+			else if (NT >=20 || NT >=49)
+			
+				{
+					cout<<setw (21) << right << " " << setw (3) << "YOU HAVE 1 FREE TICKET";
+					cout<<endl;	
+				}
+	
+	
+	}	
+		
+		
+		
+		
+	
+	if (UNICODE == 'L'||UNICODE == 'l')
+	{
+			if (NT>=40)
+
+				{
+					cout<<setw (21) << right << " " << setw (3) << "YOU HAVE 2 FREE TICKETS";
+					cout<<endl;	
+				}
+		
+	
+			else if (NT >=15 || NT >=39)
+			
+				{
+					cout<<setw (21) << right << " " << setw (3) << "YOU HAVE 1 FREE TICKET";
+						cout<<endl;
+				}
+
+	
+	}	
+		
+		
+		
+	
+	else if (UNICODE == 'G'||UNICODE == 'g')
+	{
+			if (NT>=80)
+
+					{
+						cout<<setw (21) << right << " " << setw (3) << "YOU HAVE 2 FREE TICKETS";
+						cout<<endl;	
+					}
+		
+	
+			else if (NT >=40 || NT >=79)
+			
+					{
+						cout<<setw (21) << right << " " << setw (3) << "YOU HAVE 1 FREE TICKET";
+						cout<<endl;
+					}
+	}	
+
+
+
+	
+	
+	else if ( UNICODE == 'U' || UNICODE == 'u')
+	{
+		cout<<setw (21) << right << " " << setw (3) << "Sit Location: UPPER_BOX";
+		cout<<endl;
+		
+		
+		cout<<setw (21) << right << " " << setw (3) << "Ticket Prize:  1000.00";
+		NTUAD=(NT*1000);
+		cout<<endl;
+	
+		
+		cout<<setw (21) << right << " " << setw (3) << "Amount Due: "<<NTUAD;
+		cout<<endl;
+		
+		
+		jumpMNYU:
+		cout<<setw (21) << right << " " << setw (3) << "Money:";
+		cin>>MONEYU;
+		
+		
+		
+		if (MONEYU<NTUAD)
+		
+			{
+				cout<<setw (21) << right << " " << setw (3) << "INSUFFICIENT FUNDS!";
+				goto jumpMNYU;
+			}
+			
+			
+		SOKLI=(MONEYU-NTUAD);
+		cout<<setw (21) << right << " " << setw (3) << "CHANGE:"<<SOKLI;	
+	}
+	
+		
+		
+	
+
+	
+	
+	if ( UNICODE == 'L' || UNICODE == 'l')
+	{
+		cout<<setw (21) << right << " " << setw (3) << "Sit Location: UPPER_BOX";
+		cout<<endl;
+		
+		
+		cout<<setw (21) << right << " " << setw (3) << "Ticket Prize:  1500.00";
+		NTLAD=(NT*1500);
+		cout<<endl;
+	
+		
+		cout<<setw (21) << right << " " << setw (3) << "Amount Due: "<<NTLAD;
+		cout<<endl;
+		
+		
+		jumpMNYL:
+		cout<<setw (21) << right << " " << setw (3) << "Money:";
+		cin>>MONEYL;
+		
+		
+		
+		if (MONEYL<NTLAD)
+		
+			{
+				cout<<setw (21) << right << " " << setw (3) << "INSUFFICIENT FUNDS!";
+				goto jumpMNYL;
+			}
+	
+
+			
+			
+		SOKLI=(MONEYL-NTLAD);
+		cout<<setw (21) << right << " " << setw (3) << "CHANGE:"<<SOKLI;
+	}
+	
+	
+	
+	
+	
+	
+
+	else	if ( UNICODE == 'G' || UNICODE == 'g')
+	{
+		cout<<setw (21) << right << " " << setw (3) << "Sit Location: GEN_AD";
+		cout<<endl;
+		
+		
+		cout<<setw (21) << right << " " << setw (3) << "Ticket Prize:  500.00";
+		NTGAD=(NT*500);
+		cout<<endl;
+	
+		
+		cout<<setw (21) << right << " " << setw (3) << "Amount Due: "<<NTGAD;
+		cout<<endl;
+		
+		
+		jumpMNYG:
+		cout<<setw (21) << right << " " << setw (3) << "Money:";
+		cin>>MONEYG;
+		
+		
+		
+		if (MONEYG<NTGAD)
+		
+			{
+				cout<<setw (21) << right << " " << setw (3) << "INSUFFICIENT FUNDS!";
+				goto jumpMNYG;
+			}
+			
+			
+			
+				
+		SOKLI=(MONEYG-NTGAD);
+		cout<<setw (21) << right << " " << setw (3) << "CHANGE"<<SOKLI;
+	}
+	
+	
+	
+	
+	
+	
+	
+	if ( UNICODE == 'V' || UNICODE == 'v')
+	{
+		cout<<setw (21) << right << " " << setw (3) << "Sit Location: VIP";
+		cout<<endl;
+		
+		
+		cout<<setw (21) << right << " " << setw (3) << "Ticket Prize:  2000.00";
+		NTVAD=(NT*2000);
+		cout<<endl;
+	
+		
+		cout<<setw (21) << right << " " << setw (3) << "Amount Due: "<<NTVAD;
+		cout<<endl;
+		
+		
+		jumpMNYV:
+		cout<<setw (21) << right << " " << setw (3) << "Money:";
+		cin>>MONEYV;
+		
+		
+		
+		if (MONEYV<NTVAD)
+		
+			{
+				cout<<setw (21) << right << " " << setw (3) << "INSUFFICIENT FUNDS!";
+				goto jumpMNYV;
+			}
+			
+			
+			
+		SOKLI=(MONEYV-NTVAD);
+		cout<<setw (21) << right << " " << setw (3) << "CHANGE"<<SOKLI;
+	}
+	
+	
+	cout<< endl;
+	cout<< endl << setw (21) << right << " " << setw (3) << "***THANK YOU AND ENJOY***";
+	cout<<endl;
+
+
+
+}
+
+
+	
+	return 0;
+
+
+}
